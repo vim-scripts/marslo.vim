@@ -1,0 +1,33 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4772
+
+The color made by myself. Including 16 color and 256 color
+Here the screenshot: https://github.com/Marslo/marslo.vim/blob/master/Screenshots/my256colors.png?raw=true
+Here the github repo for my color: https://github.com/Marslo/marslo.vim
+
+-----
+Usage:
+- Copy the following settings to .vimrc(linux [~/.vimrc]) or _vimrc(windows [C:\Program Files (x86)\Vim\_vimrc])
+====
+if has('gui_running') || 'xterm-256color' == $TERM
+    colorscheme marslo256
+    let psc_style='cool'
+else
+    colorscheme marslo16
+endif
+====
+
+- For Linux, just add the following setting into .bashrc(~/.bashrc)
+====
+if [ -e /usr/share/terminfo/x/xterm-256color ];
+then
+    export TERM='xterm-256color'
+# Ubuntu
+elif [ -e /lib/terminfo/x/xterm-256color ];
+then
+    export TERM='xterm-256color'
+else
+    export TERM='xterm-color'
+fi
+====
+
+Anything wrong, just leave message at: https://github.com/Marslo/marslo.vim/issues
