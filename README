@@ -1,33 +1,42 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=4772
 
-The color made by myself. Including 16 color and 256 color
-Here the screenshot: https://github.com/Marslo/marslo.vim/blob/master/Screenshots/my256colors.png?raw=true
-Here the github repo for my color: https://github.com/Marslo/marslo.vim
+The color made by myself. Including 16 color and 256 color.
+这是我自己做的vim配色。包括了16色和256色两种
+
+Here the screenshot: https://github.com/Marslo/marslo.vim#screenshot
+无图无真相： https://github.com/Marslo/marslo.vim#screenshot
+
+Here the github repo for my color scheme: https://github.com/Marslo/marslo.vim
+详情查看此配色在github上的repo： https://github.com/Marslo/marslo.vim
 
 -----
 Usage:
-- Copy the following settings to .vimrc(linux [~/.vimrc]) or _vimrc(windows [C:\Program Files (x86)\Vim\_vimrc])
-====
-if has('gui_running') || 'xterm-256color' == $TERM
-    colorscheme marslo256
-    let psc_style='cool'
-else
-    colorscheme marslo16
-endif
-====
+使用方法:
+- Copy the following settings to .vimrc in linux (~/.vimrc) or _vimrc in windows (C:\Program Files (x86)\Vim\_vimrc)
+  将如下配置拷贝粘贴至 Linux下的.vimrc(~/.vimrc) 或者 windows下的_vimrc(C:\Program Files (x86)\Vim\_vimrc)
 
-- For Linux, just add the following setting into .bashrc(~/.bashrc)
-====
-if [ -e /usr/share/terminfo/x/xterm-256color ];
-then
-    export TERM='xterm-256color'
-# Ubuntu
-elif [ -e /lib/terminfo/x/xterm-256color ];
-then
-    export TERM='xterm-256color'
-else
-    export TERM='xterm-color'
-fi
-====
+    if has('gui_running') || 'xterm-256color' == $TERM
+        colorscheme marslo256
+        let psc_style='cool'
+    else
+        colorscheme marslo16
+    endif
+
+
+- For Linux, just add the following setting into .bashrc(~/.bashrc). Make sure 256 colors can be supported in Linux Terminal.
+  如果是Linux用户，还需要将如下配置粘贴复制至 .bashrc(~/.bashrc) 以保证Linux下的终端可以支持256色(不写也行，只是不好看)
+
+    if [ -e /usr/share/terminfo/x/xterm-256color ];
+    then
+        export TERM='xterm-256color'
+    # Ubuntu
+    elif [ -e /lib/terminfo/x/xterm-256color ];
+    then
+        export TERM='xterm-256color'
+    else
+        export TERM='xterm-color'
+    fi
+
 
 Anything wrong, just leave message at: https://github.com/Marslo/marslo.vim/issues
+任何问题，请到此配色的github的repo处留言: https://github.com/Marslo/marslo.vim/issues
