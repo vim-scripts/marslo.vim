@@ -1,5 +1,5 @@
 " =============================================================================
-"       FileName: marslo16.vim
+"       FileName: marslo.vim
 "           Desc:
 "             cool help screens
 "             :he group-name
@@ -9,10 +9,17 @@
 "          Email: marslo.jiao@gmail.com
 "        Created: 2012-05-29
 "        Version: 0.1.10
-"     LastChange: 2014-10-23 17:47:39
+"     LastChange: 2014-10-23 17:46:59
 " =============================================================================
 
+
 set background=dark
+" set background=dark
+if 256 != &t_Co && ! has("gui_running")
+  echomsg ""
+  echomsg "Error: Please use GUI or an 256-color terminal (:set t_Co=256 && export TERM='xterm-256color')"
+  echomsg ""
+endif
 
 if version > 580
   " no guarantees for version 5.8 and below, but this makes it stop
@@ -23,7 +30,8 @@ if version > 580
   endif
 endif
 
-let g:colors_name="marslo16"
+let g:colors_name="marslo"
+let color_name="marslo"
 
 hi Normal	              guifg=#DDDDDD         guibg=#181818
 hi Cursor	              guibg=#A6E22E         guifg=#A6E22E       gui=underline
@@ -157,54 +165,85 @@ hi rubyIdentifier       guifg=#FF5F5F
 "    14	    3*	    Yellow,         LightYellow (#FFFFE0)
 "    15	    7*	    White
 
-hi SpecialKey	          ctermfg=DarkGreen
-" hi NonText	            cterm=NONE          ctermfg=darkblue
-hi NonText	            cterm=NONE          ctermfg=DarkGray
-hi Directory	          ctermfg=Red
-hi ErrorMsg	            cterm=NONE          ctermfg=Red         ctermbg=0
-hi IncSearch	          cterm=NONE          ctermfg=Yellow      ctermbg=Green
-hi Search	              cterm=NONE          ctermfg=Grey        ctermbg=Blue
-hi MoreMsg	            ctermfg=DarkGreen
-hi ModeMsg	            cterm=NONE          ctermfg=Brown
-hi Question	            ctermfg=Green
-hi StatusLine	          cterm=NONE          ctermfg=DarkGray    ctermbg=Black
-hi StatusLineNC         cterm=NONE
+hi SpecialKey	          ctermfg=darkgreen
+" hi NonText	            cterm=NONE          ctermfg=157
+hi NonText	            cterm=NONE          ctermfg=239
+hi Directory	          ctermfg=63
+hi ErrorMsg	            cterm=NONE          ctermfg=red         ctermbg=0
+hi IncSearch	          cterm=NONE          ctermfg=yellow      ctermbg=green
+hi Search	              cterm=NONE          ctermfg=grey        ctermbg=blue
+hi MoreMsg	            ctermfg=darkgreen
+hi ModeMsg	            cterm=NONE          ctermfg=brown
+hi Question	            ctermfg=green
+hi StatusLine	          cterm=NONE          ctermfg=238         ctermbg=black
+hi StatusLineNC         cterm=NONE          ctermfg=235         ctermbg=black
 hi VertSplit	          cterm=NONE
-hi Title	              cterm=NONE          ctermfg=5
-hi Visual	              cterm=underline     ctermbg=DarkMagenta
-" hi VisualNOS	          cterm=underline
-hi WarningMsg	          ctermfg=Yellow      ctermbg=Black
+hi Title	              ctermfg=5
+hi Visual	              cterm=underline     ctermbg=NONE
+hi VisualNOS	          cterm=underline
+hi WarningMsg	          ctermfg=yellow      ctermbg=black
 hi WildMenu	            ctermfg=0           ctermbg=3
-hi Folded	              ctermfg=DarkGrey    ctermbg=NONE
-hi FoldColumn	          ctermfg=DarkGrey    ctermbg=NONE
-" hi DiffAdd	            ctermbg=4
-hi DiffAdd	            cterm=NONE
-" hi DiffChange	          ctermbg=2
-hi DiffDelete	          cterm=NONE
-hi DiffDelete	          cterm=NONE          ctermfg=4           ctermbg=6
-hi DiffText	            cterm=NONE          ctermbg=1
+hi Folded	              ctermfg=darkgrey    ctermbg=NONE
+hi FoldColumn	          ctermfg=darkgrey    ctermbg=NONE
+hi DiffAdd	            cterm=NONE          ctermbg=56          ctermfg=255
+hi DiffDelete	          cterm=NONE          ctermbg=239
+hi DiffAdded            ctermbg=93
+hi DiffRemoved          ctermbg=129
+hi DiffChange	          cterm=bold          ctermbg=NONE        ctermfg=255
+hi DiffText	            cterm=underline     ctermbg=NONE        term=bold
 " The color setting for complete opt
-hi Pmenu                ctermbg=DarkRed
-hi PmenuSel             ctermfg=LightGreen
-hi Identifier	          ctermfg=Yellow
+hi Pmenu                ctermfg=208         ctermbg=NONE
+hi PmenuSel             ctermfg=154
+hi Identifier	          ctermfg=149
 hi Cursor               cterm=underline     term=underline
 hi MatchParen           cterm=inverse       term=inverse
-hi LineNr	              ctermfg=DarkGrey    ctermbg=none
+hi LineNr               ctermfg=239         ctermbg=none
 hi CursorLine           cterm=NONE
-hi CursorLineNr         ctermbg=NONE        ctermfg=LightGreen     term=bold
-hi Comment	            ctermfg=DarkGrey
-hi Constant	            ctermfg=DarkBlue
+hi String               ctermfg=82
+hi Entity               ctermfg=166
+hi Support              ctermfg=202
+hi CursorLineNr         ctermbg=NONE        ctermfg=118         term=bold
+hi Comment	            ctermfg=239
+hi Constant	            ctermfg=113
 """" Key words (while, if, else, for, in)
-hi Statement	          ctermfg=DarkGreen
+hi Statement	          ctermfg=red
 """" #! color
-hi PreProc	            ctermfg=Red
-hi Type		              ctermfg=Brown
-hi Special 	            ctermfg=Yellow
+hi PreProc	            ctermfg=red
+"""" classname, <key>, <Groupname> color
+" hi Type		            ctermfg=221
+" hi Type		              ctermfg=69
+hi Type		              ctermfg=106
+hi Special	            ctermfg=221
 hi Underlined	          cterm=underline     ctermfg=5
-hi Ignore	              cterm=NONE          ctermfg=7       ctermfg=DarkGrey
+hi Ignore	              cterm=NONE          ctermfg=7       ctermfg=darkgrey
 hi Error	              cterm=NONE          ctermfg=7       ctermbg=1
+" HTML
+hi htmlTag              ctermfg=244
+hi htmlEndTag           ctermfg=244
+hi htmlArg              ctermfg=203
+hi htmlValue            ctermfg=187
+hi htmlTitle            ctermfg=184         ctermbg=NONE
+hi htmlTagName          ctermfg=69
+" hi htmlString           ctermfg=104
+hi htmlString           ctermfg=113
+" NERDTree
+" hi Directory            ctermfg=110
+hi treeCWD              ctermfg=180
+hi treeClosable         ctermfg=174
+hi treeOpenable         ctermfg=150
+hi treePart             ctermfg=244
+hi treeDirSlash         ctermfg=244
+hi treeLink             ctermfg=182
 
-hi User1                ctermfg=Magenta     ctermbg=Black
-hi User2                ctermfg=LightGreen  ctermbg=Black
+hi Boolean              ctermfg=196
+hi Function             ctermfg=105
+hi Structure            ctermfg=202
+hi Define               ctermfg=179
+hi Conditional          ctermfg=190
+hi Operator             ctermfg=208
 
-"vim: sw=4
+hi rubyIdentifier       ctermfg=9
+hi User1                ctermfg=135         ctermbg=black
+hi User2                ctermfg=193         ctermbg=black
+
+" vim: tabstop=2:softtabstop=2:shiftwidth=2:expandtab:sw=2
