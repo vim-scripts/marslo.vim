@@ -3,10 +3,10 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=4772
 The color made by myself. Including 16 color and 256 color.
 这是我自己做的vim配色。包括了16色和256色两种
 
-Here the screenshot: https://github.com/Marslo/marslo.vim#screenshot
+The screenshot: https://github.com/Marslo/marslo.vim#screenshot
 无图无真相： https://github.com/Marslo/marslo.vim#screenshot
 
-Here the github repo for my color scheme: https://github.com/Marslo/marslo.vim
+The github repo for my color scheme: https://github.com/Marslo/marslo.vim
 详情查看此配色在github上的repo： https://github.com/Marslo/marslo.vim
 
 -----
@@ -16,7 +16,7 @@ Usage:
   将如下配置拷贝粘贴至 Linux下的.vimrc(~/.vimrc) 或者 windows下的_vimrc(C:\Program Files (x86)\Vim\_vimrc)
 
     if has('gui_running') || 'xterm-256color' == $TERM
-        colorscheme marslo256
+        colorscheme marslo
         let psc_style='cool'
     else
         colorscheme marslo16
